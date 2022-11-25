@@ -28,7 +28,6 @@ local S = minetest.get_translator("sugar")
 sugar.get_translator = S
 local S = sugar.get_translator
 
-
 -- Item and block
 
 minetest.register_craftitem("sugar:sugar", {
@@ -43,20 +42,6 @@ minetest.register_node("sugar:sugar_block", {
   tiles = {"sugar_sugar_block.png"},
   groups = {cracky = 3},
 })
-
-
--- Decay of the sugar block near water
-
-minetest.register_abm({
-  nodenames = {"sugar:sugar_block"},
-  neighbours = {"group:water"},
-  interval = 35,
-  chance = 25,
-  action = function(pos)
-    minetest.set_node(pos, { name = "air" })
-  end,
-})
-
 
 -- Crafting
 
